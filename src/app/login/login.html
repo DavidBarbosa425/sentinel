@@ -1,0 +1,30 @@
+
+<div class="container">
+
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+
+        <h1>Login</h1>
+        <label>Email</label>
+        <input type="text" pInputText formControlName="email" />
+
+        <label>Password</label>
+        <input type="password" pInputText formControlName="password" />
+
+        <div>
+            <p-checkbox formControlName="rememberMe" [binary]="true" />
+            <label class="ml-2">Remember Me?</label>
+        </div>
+
+        <button
+            pButton
+            pRipple
+            type="button"
+            (click)="login()"
+            text
+            severity="primary"
+            >
+            Login
+        </button>
+
+    </form>
+</div>
