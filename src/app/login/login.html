@@ -3,16 +3,17 @@
 
     <form [formGroup]="loginForm" (ngSubmit)="login()">
 
-        <h1>Login</h1>
+        <h1>Sentinel</h1>
+        <p>Entrar no Sentinel</p>
         <label>Email</label>
         <input type="text" pInputText formControlName="email" />
 
-        <label>Password</label>
+        <label>Senha</label>
         <input type="password" pInputText formControlName="password" />
 
         <div>
             <p-checkbox formControlName="rememberMe" [binary]="true" />
-            <label class="ml-2">Remember Me?</label>
+            <label class="ml-2">Lembrar de mim?</label>
         </div>
 
         <button
@@ -23,8 +24,26 @@
             text
             severity="primary"
             >
-            Login
+            Entrar
         </button>
 
+        <div class="container-new-account">
+
+            <a href="" severity="info">Esqueceu a Conta?</a>
+
+            <span>ou</span>
+            
+            <button
+                pButton
+                type="button"
+                (click)="login()"
+                text
+                severity="info"
+                >
+                Criar Nova Conta
+            </button>
+
+        </div>
+        
     </form>
 </div>
