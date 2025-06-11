@@ -5,6 +5,7 @@ import { Checkbox } from 'primeng/checkbox';
 import { InputTextModule } from 'primeng/inputtext';
 import { LoginService } from '../services/login';
 import { LoginDto } from '../models/dtos/login';
+import { ToastService } from '../shared/toast';
 
 @Component({
   selector: 'app-login',
@@ -16,8 +17,12 @@ export class Login {
 
     loginForm!:FormGroup
 
-  constructor(private formBuilder:FormBuilder, private loginService: LoginService){
-        this.loginForm = this.formBuilder.group({
+  constructor(
+    private formBuilder:FormBuilder, 
+    private loginService: LoginService,
+    private toast: ToastService
+  ){
+      this.loginForm = this.formBuilder.group({
       email:[""],
       password:[""],
       rememberMe:[false]
@@ -26,10 +31,13 @@ export class Login {
   }
 
   login(){
-    debugger
     const login = new LoginDto(this.loginForm)
-    this.loginService.login(login).subscribe(r => {
-      alert(r.message)
+    this.loginService.login(login).subscribe(result => {   
+debugger
+      if(!result.success) return this.toast.showWarn("Warning", result.message);
+
+      localStorage.setItem('token',result.data)
+
     })
 
   }

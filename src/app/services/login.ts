@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { LoginDto } from '../models/dtos/login';
-import { Result } from '../core/interfaces/result';
+import { Result } from '../core/models/result';
 
 
 @Injectable({
@@ -14,6 +14,6 @@ export class LoginService {
   constructor(private httpClient:HttpClient) { }
 
   login(login: LoginDto){
-    return this.httpClient.post<Result>(`${this.url}/login`, login)
+    return this.httpClient.post<Result<string>>(`${this.url}/login`, login)
   }
 }
