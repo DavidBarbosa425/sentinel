@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { LoginDto } from '../models/dtos/login';
-import { Result } from '../core/models/result';
+import { LoginDto } from './dto';
+import { Result } from '../../../core/models/result';
 
 
 @Injectable({

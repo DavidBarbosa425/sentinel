@@ -3,9 +3,9 @@ import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
 import { Checkbox } from 'primeng/checkbox';
 import { InputTextModule } from 'primeng/inputtext';
-import { LoginService } from '../services/login';
-import { LoginDto } from '../models/dtos/login';
-import { ToastService } from '../shared/toast';
+import { LoginService } from './service';
+import { LoginDto } from './dto';
+import { ToastService } from '../../../shared/toast/toast';
 
 @Component({
   selector: 'app-login',

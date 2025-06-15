@@ -4,9 +4,10 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { providePrimeNG } from 'primeng/config';
 import Aura from '@primeng/themes/aura';
 
-import { routes } from './app.routes';
+
 import { provideHttpClient } from '@angular/common/http';
 import { MessageService } from 'primeng/api';
+import { routes } from './app.routes';
 
 export const appConfig: ApplicationConfig = {
   providers: [
